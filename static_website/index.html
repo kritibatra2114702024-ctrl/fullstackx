@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kriti Batra | Resume</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #0d9488;
+            --dark: #1f2937;
+            --light: #f3f4f6;
+            --text: #374151;
+            --text-light: #6b7280;
+            --border: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--light);
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.05em;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .contact-info a, .contact-info span {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .contact-info a:hover {
+            color: var(--primary);
+        }
+
+        /* Section Layout */
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        section h2 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            border-left: 4px solid var(--primary);
+            padding-left: 0.75rem;
+            margin-bottom: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .profile-text {
+            font-size: 1.05rem;
+            color: var(--text);
+        }
+
+        /* Grid Framework for Skills */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            background: #f9fafb;
+            padding: 1.25rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .skill-category h3 {
+            font-size: 1rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            margin-bottom: 0.4rem;
+            font-size: 0.95rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .skill-list li::before {
+            content: "•";
+            color: var(--secondary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Tables for Education */
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            margin-top: 0.5rem;
+        }
+
+        th, td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background-color: #f9fafb;
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background-color: #f8fafc;
+        }
+
+        /* Cards for Projects & Experience */
+        .card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.25rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        .card-subtitle {
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .card-date {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .card-tech {
+            font-size: 0.85rem;
+            background: #eff6ff;
+            color: var(--primary);
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .card-bullets {
+            list-style: none;
+            padding-left: 0.5rem;
+        }
+
+        .card-bullets li {
+            margin-bottom: 0.4rem;
+            position: relative;
+            padding-left: 1.25rem;
+            font-size: 0.95rem;
+        }
+
+        .card-bullets li::before {
+            content: "→";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+            .container {
+                padding: 1.5rem;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            th, td {
+                padding: 0.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <header>
+        <h1>Kriti Batra</h1>
+        <div class="contact-info">
+            <a href="mailto:kritibatra333@gmail.com">📧 kritibatra333@gmail.com</a>
+            <span>📞 7011662054</span>
+        </div>
+    </header>
+
+    <!-- Profile -->
+    <section>
+        <h2>Profile</h2>
+        <p class="profile-text">
+            Motivated BCA student with an interest in technology, AI tools, and digital marketing. Seeking internship opportunities to apply academic knowledge, develop practical skills, and contribute to real-world projects.
+        </p>
+    </section>
+
+    <!-- Education -->
+    <section>
+        <h2>Educational Qualification</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Qualification</th>
+                        <th>Institution</th>
+                        <th>Board / University</th>
+                        <th>Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <strong><td>Bachelor of Computer Applications (BCA)</td></strong>
+                        <td>Maharaja Agrasen Institute of Management Studies</td>
+                        <td>Guru Gobind Singh Indraprastha University (GGSIPU)</td>
+                        <td>Expected July 2028</td>
+                    </tr>
+                    <tr>
+                        <strong><td>12th (Senior Secondary)</td></strong>
+                        <td>Sachdeva Public School</td>
+                        <td>CBSE</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <strong><td>10th (Secondary School)</td></strong>
+                        <td>Sachdeva Public School</td>
+                        <td>CBSE</td>
+                        <td>2022</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section>
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Marketing & Design</h3>
+                <ul class="skill-list">
+                    <li>Digital Marketing</li>
+                    <li>Social Media Marketing</li>
+                    <li>Canva Content Creation</li>
+                    <li>AI Marketing Tools</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Tech</h3>
+                <ul class="skill-list">
+                    <li>Python</li>
+                    <li>HTML & CSS</li>
+                    <li>Google AI Studio</li>
+                    <li>MS Excel</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Soft Skills</h3>
+                <ul class="skill-list">
+                    <li>Communication</li>
+                    <li>Team Management</li>
+                    <li>Problem Solving</li>
+                    <li>Leadership</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section>
+        <h2>Projects</h2>
+        
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Personal Expense Tracker</div>
+                <div class="card-subtitle">Monthly Wise Analysis</div>
+            </div>
+            <div class="card-tech">Technologies: Python, Pandas, Matplotlib</div>
+            <ul class="card-bullets">
+                <li>Developed a data science project for analyzing monthly personal expenses.</li>
+                <li>Performed category-wise expense tracking and visualization.</li>
+                <li>Generated graphical insights and reports using Python libraries.</li>
+                <li>Used Pandas for data handling and Matplotlib for data visualization.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">FitTrack AI</div>
+                <div class="card-subtitle">Academic Project</div>
+            </div>
+            <div class="card-tech">Technologies: HTML, CSS, JavaScript, Google AI Studio</div>
+            <ul class="card-bullets">
+                <li>Developed an AI-based fitness and yoga website interface.</li>
+                <li>Integrated modern UI design with wellness-focused features.</li>
+                <li>Created responsive webpages for better user experience.</li>
+                <li>Built using Google AI Studio as part of academic project work.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section>
+        <h2>Experience</h2>
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <div class="card-title">Finance Head</div>
+                    <div class="card-subtitle">Algorithms (Tech Fusion Club)</div>
+                </div>
+            </div>
+            <ul class="card-bullets">
+                <li>Managed budgeting and financial planning for club activities.</li>
+                <li>Coordinated event management and team operations.</li>
+                <li>Collaborated with team members during technical and non-technical events.</li>
+                <li>Contributed to smooth execution of club activities and student engagement initiatives.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section>
+        <h2>Certifications</h2>
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <div class="card-title">Digital Marketing Masterclass: AI & Social Media Marketing</div>
+                    <div class="card-subtitle">Udemy • 75 Hours</div>
+                </div>
+                <div class="card-date">Sept 2025</div>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 0.5rem;">
+                <strong>Credential ID:</strong> UC-9F77DOCD-5D2A-4082-838F-03OFO1914149
+            </p>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>
